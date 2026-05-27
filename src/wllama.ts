@@ -511,6 +511,8 @@ export class Wllama {
       }
     }
 
+    workerResources.wasmPath = await this.cacheManager.resolveWasmUrl(workerResources.wasmPath);
+
     // initialize the worker
     this.proxy = new ProxyToWorker(
       workerResources,
